@@ -1,19 +1,17 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import AboutUs from "./pages/Aboutus";
-import Button from "./components/Button";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
-      <BrowserRouter basename="/">
-        <Routes>
-          <Route path="/AboutUs" element={<AboutUs />} />
-        </Routes>
-      </BrowserRouter>
-
-      <Button label="hi Me" onClick={() => console.log("Button Clicked")} />
-    </>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Blogs" element={<Blogs />} />
+      </Routes>
+    </div>
   );
 }
 
