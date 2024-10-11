@@ -11,8 +11,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="content-container">
-        <a href="/">
-          <img src={t4taxLogo} alt="T4Tax" className="h-16 w-auto" />
+        <a href="/" className="flex items-center gap-2">
+          <img src={t4taxLogo} alt="T4Tax" className="h-10 w-auto" />
+          <p className="text-xl font-semibold text-gray-800">T4Tax</p>
         </a>
 
         <input
