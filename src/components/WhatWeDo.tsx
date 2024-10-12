@@ -28,8 +28,8 @@ export default function WhatWeDo() {
         <div className="col-span-4 max-lg:px-20 max-sm:px-0 pt-10">
           <div className="grid grid-cols-2">
             <div className=" col-span-1 m-2">
-              <img src={img1} alt="" className="mb-5 rounded-3xl"/>
-              <img src={img2} alt="" className="mb-5 rounded-3xl"/>
+              <img src={img1} alt="" className="mb-5 rounded-3xl" />
+              <img src={img2} alt="" className="mb-5 rounded-3xl" />
             </div>
 
             <div className=" col-span-1 m-2">
@@ -39,7 +39,6 @@ export default function WhatWeDo() {
           </div>
         </div>
       </div>
-      <hr className="border border-gray-300 w-1/4 mx-auto mt-2 py-1"/>
     </>
   );
 }
