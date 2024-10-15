@@ -27,7 +27,7 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="group border-s-4 border-primary-800/80 bg-gray-50 p-3 transform transition-opacity duration-500">
+    <section className="group border-l-4 border-primary-800/80 bg-gray-50 p-3 transform transition-opacity duration-500 rounded-md shadow-md">
       <summary
         className="flex cursor-pointer items-center justify-between gap-1.5"
         onClick={() => setIsOpen(!isOpen)}
@@ -36,7 +36,7 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
         <span className="shrink-0 rounded-full bg-primary-200 p-1.5 text-gray-900 sm:p-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`size-5 shrink-0 transition-transform duration-300 ${
+            className={`h-5 w-5 transition-transform duration-300 ${
               isOpen ? "rotate-45" : ""
             }`}
             viewBox="0 0 20 20"
@@ -54,7 +54,6 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
         className={`transition-all duration-500 ease-in-out overflow-hidden ${
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
-        style={{ maxHeight: isOpen ? "500px" : "0" }}
       >
         <p className="mt-2 leading-relaxed text-gray-700">{answer}</p>
       </div>
@@ -64,11 +63,13 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
 
 const Fqas = () => {
   return (
-    <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16 justify-between content-container">
+    <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-center lg:gap-16 content-container px-4 md:px-8">
       <div className="sm:mx-auto lg:col-span-1 flex flex-col md:gap-4 gap-2">
-        <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+          Frequently Asked Questions
+        </h2>
         <div className="flex flex-col gap-4">
-          <p className="text-gray-700">
+          <p className="text-gray-700 text-base sm:text-lg">
             Got questions? We’ve got answers! Check out the most common queries
             about T4Tax.
           </p>
