@@ -63,19 +63,20 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
 
 const Fqas = () => {
   return (
-    <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-center lg:gap-16 content-container px-4 md:px-8">
-      <div className="sm:mx-auto lg:col-span-1 flex flex-col md:gap-4 gap-2">
+    <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-center lg:gap-16 px-4 md:px-8 mb-20">
+      {/* Intro Section */}
+      <div className="lg:col-span-1 flex flex-col gap-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">
           Frequently Asked Questions
         </h2>
-        <div className="flex flex-col gap-4">
-          <p className="text-gray-700 text-base sm:text-lg">
-            Got questions? We’ve got answers! Check out the most common queries
-            about T4Tax.
-          </p>
-        </div>
+        <p className="text-gray-700 text-base sm:text-lg">
+          Got questions? We’ve got answers! Check out the most common queries
+          about T4Tax.
+        </p>
       </div>
-      <div className="lg:col-span-2 lg:mx-0 sm:w-full md:w-3/4 lg:w-full">
+
+      {/* FAQ Section */}
+      <div className="lg:col-span-2">
         <div className="space-y-4">
           {questionAndAnswers.map((fqa, index) => (
             <QuestionAnswer

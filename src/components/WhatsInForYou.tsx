@@ -3,9 +3,9 @@ import CardWhatsInForYou from './CardWhatsInForYou';
 
 const WhatsInForYou = () => {
   return (
-    <div className="container mx-auto py-8 mt-10">
+    <div className="container mx-auto py-8 mt-16">
       {/* Heading centered */}
-      <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-8">What's in for you?</h1>
+      <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-10">What's in for you?</h1>
 
       {/* Cards container */}
       <div className="flex flex-wrap justify-center lg:flex-nowrap">

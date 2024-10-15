@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
-import { Link } from "react-router-dom"; // Use Link from React Router
+import { Link } from "react-router-dom";
 
 interface NavigationItem {
   id: string;
@@ -17,67 +17,70 @@ const navigation: NavigationItem[] = [
 
 const Footer = () => {
   return (
-    <footer className="text-white mt-10">
-      {/* Use a deep dark purple or charcoal */}
-      <div className="bg-[#1b1231c4] h-1/2 w-full ">
-        <div className="content-container flex md:flex-row flex-col justify-around items-start">
-          <div className="p-5 ">
-            <ul className="flex flex-col justify-center items-center gap-4">
-              <Link
-                to="/#"
-                className="flex gap-2 bg-primary-100 rounded-full justify-between items-center px-4 py-2"
-              >
-                <img
-                  src="src/assets/T4Tax.png"
-                  height={100}
-                  width={100}
-                  alt="Logo"
-                  className="object-center object-contain"
-                />
-              </Link>
+    <footer className="bg-[#1b1231] text-white mt-0 pt-11">
+      <div className="content-container flex flex-col md:flex-row justify-between items-start px-5 py-8 md:py-12 space-y-8 md:space-y-0">
+        {/* Logo and Social Media Links */}
+        <div className="flex flex-col items-center space-y-5">
+  <Link to="/" className="flex gap-2 items-center">
+    <img
+      src="src/assets/T4Tax.png"
+      height={100}
+      width={100}
+      alt="Logo"
+      className="object-center object-contain filter brightness-0 invert"
+    />
+  </Link>
 
-              <div className="flex gap-6 pb-5">
-                <Instagram className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
-                <Twitter className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
-                <Linkedin className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
-                <Youtube className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
-              </div>
-            </ul>
-          </div>
-
-          <div className="flex flex-col p-5 gap-4 ">
-            <p className="heading !text-gray-300">Address</p>
-            <p>
-              T4Tax,
-              <br /> Banglore,
-              <br /> Pune . - 574115.
-              <br />
-              <br />
-              Ph No: 7892859097
-            </p>
-          </div>
-
-          <div className="p-5 flex flex-col gap-1">
-            <p className="heading mb-4 !text-gray-300">{t("Content")}</p>
-            {navigation.map((item) => {
-              if (typeof item.url === "string") {
-                return (
-                  <Link
-                    key={item.id}
-                    to={item.url}
-                    style={{ textTransform: "capitalize" }}
-                    className="text-gray-400 body pb-2 font-semibold transition-colors duration-150 hover:text-secondary-300 cursor-pointer"
-                  >
-                    {t(item.id)}
-                  </Link>
-                );
-              }
-            })}
+          <div className="flex gap-6">
+            <a href="#" aria-label="Instagram">
+              <Instagram className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
+            </a>
+            <a href="#" aria-label="Twitter">
+              <Twitter className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <Linkedin className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <Youtube className="text-2xl cursor-pointer transition-colors duration-150 hover:text-secondary-300" />
+            </a>
           </div>
         </div>
-        <h1 className="flex flex-col justify-center items-center text-center p-5">
-          &copy; 2023-2024 All rights reserved
-        </h1>
+
+        {/* Address Section */}
+        <div className="text-center md:text-left space-y-4">
+          <p className="text-lg font-semibold text-gray-300">Address</p>
+          <p className="text-gray-400">
+            T4Tax,
+            <br /> Banglore,
+            <br /> Pune - 574115.
+            <br />
+            <br />
+            Ph No: 7892859097
+          </p>
+        </div>
+
+        {/* Navigation Links */}
+        <div className="space-y-4">
+          <p className="text-lg font-semibold text-gray-300">{t("Content")}</p>
+          <ul className="space-y-2">
+            {navigation.map((item) => (
+              <li key={item.id}>
+                <Link
+                  to={typeof item.url === "string" ? item.url : "#"}
+                  className="text-gray-400 hover:text-secondary-300 transition-colors duration-150 font-semibold"
+                  style={{ textTransform: "capitalize" }}
+                >
+                  {t(item.id)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-gray-700 py-4 text-center">
+        <p className="text-gray-400">&copy; 2023-2024 All rights reserved</p>
       </div>
     </footer>
   );
