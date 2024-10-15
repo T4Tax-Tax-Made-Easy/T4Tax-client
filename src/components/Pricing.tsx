@@ -1,5 +1,3 @@
-import React from "react";
-
 const Pricing = () => {
   return (
     <section className="relative z-10 overflow-hidden bg-[#ede8f5] pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">

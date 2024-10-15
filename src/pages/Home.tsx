@@ -1,5 +1,6 @@
 import CenterText from "../components/centerText";
 import Faq from "../components/faqs";
+import Footer from "../components/Footer";
 import Herosection from "../components/Herosection";
 import Pricing from "../components/Pricing";
 import WhatsForYou from "../components/WhatsInForYou";
@@ -15,6 +16,7 @@ const Home = () => {
       <WhatsForYou />
       <Pricing />
       <Faq />
+      <Footer />
     </div>
   );
 };
